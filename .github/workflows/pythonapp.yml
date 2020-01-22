@@ -33,6 +33,8 @@ jobs:
         pytest
     - name: release
       uses: rymndhng/release-on-push-action@v0.9.1
+      with:
+          strategy: minor
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
