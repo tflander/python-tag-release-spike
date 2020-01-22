@@ -32,10 +32,14 @@ jobs:
         pip install pytest
         pytest
     - name: release
-      uses: rymndhng/release-on-push-action@v0.9.1
+      uses: "marvinpinto/action-automatic-releases@latest"
       with:
-          strategy: minor
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build spike"
+          files: |
+            LICENSE.txt
+            *.jar
 
         
