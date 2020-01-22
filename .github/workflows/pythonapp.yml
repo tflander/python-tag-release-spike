@@ -1,5 +1,4 @@
-name: Python application
-
+name: python-tag-release-spike-ci
 on: [push]
 
 jobs:
