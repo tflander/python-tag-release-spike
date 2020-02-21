@@ -31,11 +31,16 @@ jobs:
       run: |
         pip install pytest
         pytest
+    - name: create semantic version tag
+      uses: mathieudutour/github-tag-action@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+      id: tag-it        
     - name: release
       uses: "marvinpinto/action-automatic-releases@latest"
       with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
+          automatic_release_tag: "${{steps.tag-it.outputs.new_tag}}"
           prerelease: true
           title: "Development Build spike"
           files: |
