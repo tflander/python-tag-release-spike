@@ -42,9 +42,6 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "${{steps.tag-it.outputs.new_tag}}"
           prerelease: true
-          title: "Development Build spike"
-          files: |
-            LICENSE.txt
-            *.jar
+          title: "${{github.workflow}}"
 
         
