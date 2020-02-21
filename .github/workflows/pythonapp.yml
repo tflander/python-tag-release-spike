@@ -41,7 +41,7 @@ jobs:
       with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "${{steps.tag-it.outputs.new_tag}}"
-          prerelease: true
+          prerelease: false
           title: "${{github.workflow}}"
 
         
